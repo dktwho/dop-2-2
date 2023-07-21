@@ -11,8 +11,11 @@ export const Page = (props:PropsType ) => {
 
 
 
+
+
     return (
         <div>
+
             <div>{props.pages[element].heading}</div>
             <div>{props.pages[element].about}</div>
         </div>

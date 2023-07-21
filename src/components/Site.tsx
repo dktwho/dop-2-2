@@ -27,13 +27,7 @@ export const Site = () => {
                     <Routes>
                         <Route path={'/'} element={<Navigate to={'/PageOne'}/>}/>
                         <Route path={`/Page/:id`} element={<Page pages={dataState.pages}/>}/>
-
-
-                        {/*<Route path={'/PageOne'} element={<PageOne/>}/>*/}
-                        {/*<Route path={'/PageTwo'} element={<PageTwo/>}/>*/}
-                        {/*<Route path={'/PageThree'} element={<PageThree/>}/>*/}
-
-                        <Route path={'/*'} element={<Error404/>}/>
+                        <Route path={'/Page/*'} element={<Error404/>}/>
                     </Routes>
                 </div>
             </div>
