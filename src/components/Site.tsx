@@ -4,7 +4,7 @@ import {PageOne} from "./pages/PageOne";
 import {PageTwo} from "./pages/PageTwo";
 import {PageThree} from "./pages/PageThree";
 import {Error404} from "./pages/Error404";
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 
 export const Site = () => {
     return (
@@ -16,9 +16,12 @@ export const Site = () => {
                 </div>
                 <div className={styles.content}>
                     <Routes>
+                        <Route path={'/'} element={<Navigate to={'/PageOne'}/>}/>
                         <Route path={'/PageOne'} element={<PageOne/>}/>
                         <Route path={'/PageTwo'} element={<PageTwo/>}/>
                         <Route path={'/PageThree'} element={<PageThree/>}/>
+
+                        <Route path={'/*'} element={<Error404/>}/>
                     </Routes>
                 </div>
             </div>
