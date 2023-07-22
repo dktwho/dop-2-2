@@ -8,16 +8,17 @@ type PropsType = {
 }
 export const Page = (props: PropsType) => {
     const params = useParams()
-    let element = Number(params.id)
+    let element: any = Number(params.id)
+
 
     return (
         <div>
-            {isNaN(element)
-                ? <Error404/>
-                : <>
+            {props.pages[element]
+                ? <>
                     <div>{props.pages[element].heading}</div>
                     <div>{props.pages[element].about}</div>
-                </>}
+                </>
+                : <Error404/> }
         </div>
     );
 };
